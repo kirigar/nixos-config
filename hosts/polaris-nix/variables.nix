@@ -9,8 +9,8 @@
   ];
 
   config.var = {
-    hostname = "nixy";
-    username = "hadi";
+    hostname = "polaris-nix";
+    username = "kiri";
     configDirectory =
       "/home/"
       + config.var.username
@@ -18,14 +18,13 @@
 
     keyboardLayout = "fr";
 
-    location = "Paris";
-    timeZone = "Europe/Paris";
+    location = "Meterik";
+    timeZone = "Europe/Amsterdam";
     defaultLocale = "en_US.UTF-8";
-    extraLocale = "fr_FR.UTF-8";
 
     git = {
-      username = "Hadi";
-      email = "112569860+anotherhadi@users.noreply.github.com";
+      username = "kiri";
+      email = "mail@jelles.net";
     };
 
     autoUpgrade = false;

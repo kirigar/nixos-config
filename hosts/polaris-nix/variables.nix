@@ -21,6 +21,7 @@
     location = "Meterik";
     timeZone = "Europe/Amsterdam";
     defaultLocale = "en_US.UTF-8";
+    extraLocale = "";
 
     git = {
       username = "kiri";

@@ -4,6 +4,7 @@
     installVimSyntax = true;
     enableZshIntegration = true;
     settings = {
+      font-feature = "-calt, -liga, -dlig";
       window-padding-x = 10;
       window-padding-y = 10;
       keybind = [

@@ -8,8 +8,8 @@
     type = lib.types.attrs;
     default = {
       rounding = 17;
-      gaps-in = 8;
-      gaps-out = 8 * 2;
+      gaps-in = 5;
+      gaps-out = 10;
       active-opacity = 0.97;
       inactive-opacity = 0.94;
       blur = true;
@@ -78,14 +78,14 @@
         applications = 13;
         desktop = 13;
         popups = 13;
-        terminal = 13;
+        terminal = 11;
       };
     };
 
     polarity = "dark";
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/japan-houses.png";
-      sha256 = "sha256-BeTFz+WeulDt5ixg5ni09J439PxMnofWnJz5PGEUgf8=";
+      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
+      sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
     };
   };
 }

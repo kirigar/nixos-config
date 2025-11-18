@@ -9,7 +9,7 @@
         "$mod,M, exec,  uwsm app -- ${pkgs.protonmail-desktop}/bin/proton-mail" # Proton Mail
         "$mod,V, exec,  uwsm app -- ${pkgs.protonvpn-gui}/bin/protonvpn-app" # Proton VPN
         "$mod,A, exec,  uwsm app -- ${pkgs.proton-authenticator}/bin/proton-authenticator" # Proton Authenticator
-        "$mod,L, exec,  uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
+        #"$mod,L, exec,  uwsm app -- ${pkgs.hyprlock}/bin/hyprlock" # Lock
         # "$mod,SPACE, exec, vicinae" # Launcher FIXME: broken
         "$mod,X, exec, powermenu" # Powermenu
         "$mod,SPACE, exec, menu" # Launcher
@@ -19,10 +19,10 @@
         "$mod,Q, killactive," # Close window
         "$mod,T, togglefloating," # Toggle Floating
         "$mod,F, fullscreen" # Toggle Fullscreen
-        "$mod,left, movefocus, l" # Move focus left
-        "$mod,right, movefocus, r" # Move focus Right
-        "$mod,up, movefocus, u" # Move focus Up
-        "$mod,down, movefocus, d" # Move focus Down
+        "$mod,h, movefocus, l" # Move focus left
+        "$mod,l, movefocus, r" # Move focus Right
+        "$mod,k, movefocus, u" # Move focus Up
+        "$mod,j, movefocus, d" # Move focus Down
         "$shiftMod,up, focusmonitor, -1" # Focus previous monitor
         "$shiftMod,down, focusmonitor, 1" # Focus next monitor
         "$shiftMod,left, layoutmsg, addmaster" # Add to master

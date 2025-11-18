@@ -145,6 +145,13 @@
         action = "<cmd>set showtabline=0<cr>";
         desc = "Hide tabline";
       }
+      {
+        key = "<leader>uh";
+        mode = "n";
+        silent = true;
+        action = "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>";
+        desc = "Toggle inlay hints";
+      }
 
       # Windows
       {

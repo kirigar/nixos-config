@@ -109,6 +109,18 @@
       bash.enable = true;
       nix.enable = true;
       tailwind.enable = true;
+      wgsl = {
+        enable = true;
+        treesitter.enable = true;
+      };
+      rust = {
+        enable = true;
+        crates.enable = true;
+        dap.enable = true;
+        format.enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
     };
     formatter = {
       conform-nvim = {

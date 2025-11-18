@@ -9,7 +9,9 @@
   configDir = config.var.configDirectory;
   timeZone = config.var.timeZone;
   defaultLocale = config.var.defaultLocale;
-  extraLocale = config.var.extraLocale;
+  otherLocale = config.var.otherLocale;
+  numericLocale = config.var.numericLocale;
+  timeLocale = config.var.timeLocale;
   autoUpgrade = config.var.autoUpgrade;
 in {
   networking.hostName = hostname;
@@ -28,15 +30,15 @@ in {
   time = {timeZone = timeZone;};
   i18n.defaultLocale = defaultLocale;
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = extraLocale;
-    LC_IDENTIFICATION = extraLocale;
-    LC_MEASUREMENT = extraLocale;
-    LC_MONETARY = extraLocale;
-    LC_NAME = extraLocale;
-    LC_NUMERIC = extraLocale;
-    LC_PAPER = extraLocale;
-    LC_TELEPHONE = extraLocale;
-    LC_TIME = extraLocale;
+    LC_ADDRESS = otherLocale;
+    LC_IDENTIFICATION = otherLocale;
+    LC_MEASUREMENT = otherLocale;
+    LC_MONETARY = numericLocale;
+    LC_NAME = otherLocale;
+    LC_NUMERIC = numericLocale;
+    LC_PAPER = otherLocale;
+    LC_TELEPHONE = otherLocale;
+    LC_TIME = timeLocale;
   };
 
   services = {

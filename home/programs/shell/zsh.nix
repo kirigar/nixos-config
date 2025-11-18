@@ -82,7 +82,9 @@ in {
     initContent =
       # bash
       ''
-        bindkey -e
+        bindkey -v
+        export KEYTIMEOUT=1
+
         ${
           if fetch == "neofetch"
           then pkgs.neofetch + "/bin/neofetch"

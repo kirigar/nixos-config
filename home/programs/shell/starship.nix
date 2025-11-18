@@ -20,12 +20,16 @@ in {
         "$git_status"
         "$character"
       ];
-      directory = {style = accent;};
+      directory = {
+        style = accent;
+        truncation_length = 99;
+        truncate_to_repo = false;
+      };
 
       character = {
-        success_symbol = "[❯](${accent})";
-        error_symbol = "[❯](red)";
-        vimcmd_symbol = "[❮](cyan)";
+        success_symbol = "\n[❯](${accent})";
+        error_symbol = "\n[❯](red)";
+        vimcmd_symbol = "\n[❮](cyan)";
       };
 
       nix_shell = {

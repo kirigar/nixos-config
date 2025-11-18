@@ -5,7 +5,10 @@
       motion.flash-nvim.enable = true;
       outline.aerial-nvim.enable = true;
     };
-    tabline.nvimBufferline.enable = true;
+    tabline.nvimBufferline = {
+      enable = true;
+      setupOpts.options.numbers = "none";
+    };
     notes.todo-comments.enable = true;
     assistant.copilot = {
       enable = true;

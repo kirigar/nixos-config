@@ -5,7 +5,7 @@
 }: {
   imports = [
     # Choose your theme here:
-    ../../themes/nixy.nix
+    ../../themes/catppuccin.nix
   ];
 
   config.var = {
@@ -16,12 +16,14 @@
       + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
 
-    keyboardLayout = "fr";
+    keyboardLayout = "us";
 
     location = "Meterik";
     timeZone = "Europe/Amsterdam";
     defaultLocale = "en_US.UTF-8";
-    extraLocale = "";
+    timeLocale = "en_DK.UTF-8";
+    numericLocale = "en_IE.UTF-8";
+    otherLocale = "nl_NL.UTF-8";
 
     git = {
       username = "kiri";

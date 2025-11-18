@@ -22,6 +22,7 @@
     ../../home/programs/lazygit
     ../../home/programs/discord
     ../../home/programs/tailscale
+    #../../home/programs/rclone
 
     # Scripts
     ../../home/scripts # All scripts
@@ -37,8 +38,6 @@
     # ../../home/system/vicinae
     ../../home/system/wofi
     # ../../home/system/hypridle
-
-    ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
   ];
 
   home = {
@@ -68,21 +67,6 @@
       proton-authenticator
       ticktick # Privacy friendly todo app
 
-      # Dev
-      go
-      bun
-      docker
-      nodejs
-      python3
-      jq
-      just
-      pnpm
-      air
-      duckdb
-      inputs.eleakxir.packages.${pkgs.system}.leak-utils
-      caido
-      wireshark
-
       # Utils
       zip
       unzip
@@ -91,6 +75,10 @@
       pfetch
       btop
       fastfetch
+
+      # Rust dev (TODO: put in flakes)
+      rustup
+      wayland
 
       # Just cool
       peaclock
@@ -103,7 +91,7 @@
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard
-    file.".face.icon" = {source = ./profile_picture.png;};
+    #file.".face.icon" = {source = ./profile_picture.png;};
 
     # Don't touch this
     stateVersion = "24.05";

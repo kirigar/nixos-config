@@ -22,6 +22,7 @@
     ../../home/programs/lazygit
     ../../home/programs/discord
     ../../home/programs/tailscale
+    ../../home/programs/zsh
     #../../home/programs/rclone
 
     # Scripts

@@ -1,0 +1,5 @@
+require("options")
+require("plugins.ui")
+require("plugins.editor")
+require("plugins.coding")
+require("plugins.lsp")

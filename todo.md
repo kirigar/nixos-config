@@ -1,0 +1,3 @@
+- Look into how nvf does things and copy what I like
+- Integrate nixcats flake into main system flake
+- Create config for laptop

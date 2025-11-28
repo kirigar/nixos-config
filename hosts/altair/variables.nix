@@ -1,0 +1,57 @@
+{
+  config,
+  lib,
+  ...
+}:
+{
+  imports = [
+    # Choose your theme here:
+    ../../themes/catppuccin.nix
+  ];
+
+  config.var = {
+    hostname = "altair";
+    username = "kiri";
+    configDirectory = "/home/" + config.var.username + "/.config/nixos"; # The path of the nixos configuration directory
+
+    keyboardLayout = "us";
+
+    location = "Meterik";
+    timeZone = "Europe/Amsterdam";
+    defaultLocale = "en_US.UTF-8";
+    timeLocale = "en_DK.UTF-8";
+    numericLocale = "en_IE.UTF-8";
+    otherLocale = "nl_NL.UTF-8";
+
+    git = {
+      username = "kiri";
+      email = "mail@jelles.net";
+    };
+
+    autoUpgrade = false;
+    autoGarbageCollector = true;
+    hyprland = {
+      workspace = [
+        "1, monitor:0, persistent:true, default:true"
+        "2, monitor:0, persistent:true"
+        "3, monitor:0, persistent:true"
+
+        "11, monitor:0, persistent:true"
+        "12, monitor:0, persistent:true"
+        "13, monitor:0, persistent:true"
+      ];
+
+      monitor = [
+        ",preferred,auto,1.5"
+      ];
+    };
+  };
+
+  # Let this here
+  options = {
+    var = lib.mkOption {
+      type = lib.types.attrs;
+      default = { };
+    };
+  };
+}

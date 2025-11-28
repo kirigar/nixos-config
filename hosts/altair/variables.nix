@@ -42,7 +42,7 @@
       ];
 
       monitor = [
-        ",preferred,auto,1.5"
+        ",3072x1920@120,auto,1.6"
       ];
     };
   };

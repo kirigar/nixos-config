@@ -32,17 +32,17 @@
     autoGarbageCollector = true;
     hyprland = {
       workspace = [
-        "1, monitor:0, persistent:true, default:true"
-        "2, monitor:0, persistent:true"
-        "3, monitor:0, persistent:true"
+        "1, monitor:desc:California Institute of Technology 0x1410, persistent:true, default:true"
+        "2, monitor:desc:California Institute of Technology 0x1410, persistent:true"
+        "3, monitor:desc:California Institute of Technology 0x1410, persistent:true"
 
-        "11, monitor:0, persistent:true"
-        "12, monitor:0, persistent:true"
-        "13, monitor:0, persistent:true"
+        "11, monitor:desc:California Institute of Technology 0x1410, persistent:true"
+        "12, monitor:desc:California Institute of Technology 0x1410, persistent:true"
+        "13, monitor:desc:California Institute of Technology 0x1410, persistent:true"
       ];
 
       monitor = [
-        ",3072x1920@120,auto,1.6"
+        "desc:California Institute of Technology 0x1410,3072x1920@120,auto,1.6"
       ];
     };
   };

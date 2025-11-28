@@ -41,6 +41,8 @@ let
           basedpyright
           black
           isort
+
+          astro-language-server
         ];
       };
 

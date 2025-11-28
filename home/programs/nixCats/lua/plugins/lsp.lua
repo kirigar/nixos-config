@@ -160,6 +160,8 @@ require("lz.n").load({
           },
         })
         vim.lsp.enable("basedpyright")
+
+        vim.lsp.enable("astro")
       end,
     },
   },

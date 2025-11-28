@@ -139,7 +139,7 @@ in
         disable_splash_rendering = true;
         disable_autoreload = false;
         focus_on_activate = true;
-        new_window_takes_over_fullscreen = 2;
+        on_focus_under_fullscreen = 2;
       };
 
       windowrule = [

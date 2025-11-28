@@ -33,13 +33,13 @@
 
     hyprland = {
       workspace = [
-        "1, monitor:0, persistent:true, default:true"
-        "2, monitor:0, persistent:true"
-        "3, monitor:0, persistent:true"
+        "1, monitor:desc:LG Electronics LG ULTRAGEAR 103NTYT8R290, persistent:true, default:true"
+        "2, monitor:desc:LG Electronics LG ULTRAGEAR 103NTYT8R290, persistent:true"
+        "3, monitor:desc:LG Electronics LG ULTRAGEAR 103NTYT8R290, persistent:true"
 
-        "11, monitor:1, persistent:true"
-        "12, monitor:1, persistent:true"
-        "13, monitor:1, persistent:true"
+        "11, monitor:desc:LG Electronics LG ULTRAGEAR 103NTJJ8R332, persistent:true, default:true"
+        "12, monitor:desc:LG Electronics LG ULTRAGEAR 103NTJJ8R332, persistent:true"
+        "13, monitor:desc:LG Electronics LG ULTRAGEAR 103NTJJ8R332, persistent:true"
       ];
 
       monitor = [

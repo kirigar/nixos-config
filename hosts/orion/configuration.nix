@@ -18,6 +18,7 @@
     ../../server-modules/glance.nix
     ../../server-modules/radicale.nix
     ../../server-modules/actual-budget.nix
+    ../../server-modules/gitea.nix
 
     ./disk-config.nix
     ./hardware-configuration.nix

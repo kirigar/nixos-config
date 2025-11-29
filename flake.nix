@@ -75,7 +75,7 @@
             inputs.nixos-hardware.nixosModules.common-cpu-amd
             inputs.nixos-hardware.nixosModules.common-gpu-amd
 
-            ./hosts/polaris/configuration.nix
+            ./hosts/polaris/system.nix
           ];
         };
 
@@ -90,7 +90,7 @@
 
             inputs.nixos-hardware.nixosModules.lenovo-yoga-7-14ARH7-amdgpu
 
-            ./hosts/altair/configuration.nix
+            ./hosts/altair/system.nix
           ];
         };
 
@@ -108,7 +108,7 @@
             inputs.copyparty.nixosModules.default
 
             inputs.disko.nixosModules.disko
-            ./hosts/orion/configuration.nix
+            ./hosts/orion/system.nix
           ];
         };
       };

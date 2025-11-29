@@ -5,12 +5,9 @@
 }:
 {
   imports = [
-    # Mostly user-specific configuration
-    ./variables.nix
+    ../../modules/home-manager/common.nix
 
-    # Programs
-    ../../modules/home-manager/shell
-    ../../modules/home-manager/git.nix
+    ./variables.nix
   ];
 
   home = {
@@ -26,7 +23,6 @@
       ghostty
     ];
 
-    # Don't touch this
     stateVersion = "24.05";
   };
 

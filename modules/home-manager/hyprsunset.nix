@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   services = {
     hyprsunset = {
@@ -12,7 +13,7 @@
           }
           {
             time = "23:00";
-            temperature = 2000;
+            temperature = config.var.hyprsunset.temperature;
             gamma = 0.8;
           }
         ];

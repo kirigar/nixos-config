@@ -19,14 +19,16 @@
     };
   };
 
-  home.file.".config/nixos/.sops.yaml".text = ''
+  home.file.".config/nixos/secrets/.sops.yaml".text = ''
     keys:
-      - &primary age122w85pqj508ukv0rd388mahecgfckmpgnsgz0zcyec37ljae2epsdnvxpl
+      - &polaris age122w85pqj508ukv0rd388mahecgfckmpgnsgz0zcyec37ljae2epsdnvxpl
+      - &altair age15mg7k37mc3ll60rfzx4zpzp50xjefzwy0ayjpstq5ce7raem3a7sef57w7
     creation_rules:
-      - path_regex: hosts/polaris/secrets/secrets.yaml$
+      - path_regex: secrets.yaml$
         key_groups:
           - age:
-            - *primary
+            - *polaris
+            - *altair
   '';
 
   home.packages = with pkgs; [

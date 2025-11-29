@@ -8,7 +8,7 @@
   imports = [
     # Mostly user-specific configuration
     ./variables.nix
-    ./secrets/default.nix
+    ../../secrets
 
     # Programs
     ../../modules/home-manager/accounts

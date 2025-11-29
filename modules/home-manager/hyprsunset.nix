@@ -12,9 +12,9 @@
             identity = true;
           }
           {
-            time = "23:00";
+            time = "00:00";
             temperature = config.var.hyprsunset.temperature;
-            gamma = 0.8;
+            gamma = 1.0;
           }
         ];
       };

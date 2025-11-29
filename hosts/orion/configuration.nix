@@ -17,6 +17,7 @@
     ../../server-modules/home-assistant.nix
     ../../server-modules/glance.nix
     ../../server-modules/radicale.nix
+    ../../server-modules/actual-budget.nix
 
     ./disk-config.nix
     ./hardware-configuration.nix

@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   programs.rclone = {
     enable = true;
@@ -11,16 +12,16 @@
         };
 
         secrets = {
-          token = "/home/kiri/.config/rclone/gdrive_token";
+          token = "${config.xdg.configHome}/rclone/gdrive_token";
 
-          client_id = "/home/kiri/.config/rclone/gdrive_client_id";
-          client_secret = "/home/kiri/.config/rclone/gdrive_client_secret"; #TODO: sops?
+          client_id = "${config.xdg.configHome}/rclone/gdrive_client_id";
+          client_secret = "${config.xdg.configHome}/rclone/gdrive_client_secret"; # TODO: sops?
         };
 
         mounts = {
           "/" = {
             enable = true;
-            mountPoint = "/home/kiri/gdrive";
+            mountPoint = "${config.home.homeDirectory}/gdrive";
 
             options = {
               dir-cache-time = "5000h";

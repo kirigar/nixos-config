@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  monitor = "desc:California Institute of Technology 0x1410";
+in
 {
   config.var = {
     hostname = "altair";
@@ -7,17 +10,17 @@
 
     hyprland = {
       workspace = [
-        "1, monitor:desc:California Institute of Technology 0x1410, persistent:true, default:true"
-        "2, monitor:desc:California Institute of Technology 0x1410, persistent:true"
-        "3, monitor:desc:California Institute of Technology 0x1410, persistent:true"
+        "1, monitor:${monitor}, persistent:true, default:true"
+        "2, monitor:${monitor}, persistent:true"
+        "3, monitor:${monitor}, persistent:true"
 
-        "11, monitor:desc:California Institute of Technology 0x1410, persistent:true"
-        "12, monitor:desc:California Institute of Technology 0x1410, persistent:true"
-        "13, monitor:desc:California Institute of Technology 0x1410, persistent:true"
+        "11, monitor:${monitor}, persistent:true"
+        "12, monitor:${monitor}, persistent:true"
+        "13, monitor:${monitor}, persistent:true"
       ];
 
       monitor = [
-        "desc:California Institute of Technology 0x1410,3072x1920@120,auto,1.6"
+        "${monitor},3072x1920@120,auto,1.6"
       ];
     };
   };

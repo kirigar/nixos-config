@@ -129,8 +129,8 @@ let
         extra = {
           nixdExtras = {
             nixpkgs = ''import ${pkgs.path} {}'';
-            nixos_options = ''(builtins.getFlake "path:///home/kiri/.config/nixos").nixosConfigurations.${toString config.var.hostname}.options'';
-            home_manager_options = ''(builtins.getFlake "path:///home/kiri/.config/nixos").nixosConfigurations.${toString config.var.hostname}.options.home-manager.users.type.getSubOptions []'';
+            nixos_options = ''(builtins.getFlake "path://${config.var.configDirectory}").nixosConfigurations.${toString config.var.hostname}.options'';
+            home_manager_options = ''(builtins.getFlake "path://${config.var.configDirectory}").nixosConfigurations.${toString config.var.hostname}.options.home-manager.users.type.getSubOptions []'';
           };
         };
       };

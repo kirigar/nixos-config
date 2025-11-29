@@ -17,10 +17,7 @@
     numericLocale = "en_IE.UTF-8";
     otherLocale = "nl_NL.UTF-8";
 
-    git = {
-      username = "kiri";
-      email = "mail@jelles.net";
-    };
+    email = "mail@jelles.net";
 
     preferred = {
       editor = "nvim";

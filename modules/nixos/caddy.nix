@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  ...
+}:
 {
   services.caddy = {
     enable = true;
@@ -10,7 +15,8 @@
       root * ${inputs.zentire-website.packages.${pkgs.stdenv.hostPlatform.system}.default}
       file_server
     '';
-    email = "mail@jelles.net";
+
+    email = config.var.email;
   };
 
   networking.firewall = {

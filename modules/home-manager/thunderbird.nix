@@ -2,7 +2,7 @@
 {
   programs.thunderbird = {
     enable = true;
-    profiles.kiri = {
+    profiles.${config.var.username} = {
       isDefault = true;
       withExternalGnupg = true;
       settings = {

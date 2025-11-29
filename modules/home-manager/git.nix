@@ -1,8 +1,6 @@
 # Git configuration
-{config, ...}: let
-  username = config.var.git.username;
-  email = config.var.git.email;
-in {
+{ config, ... }:
+{
   programs.git = {
     enable = true;
     ignores = [
@@ -18,8 +16,8 @@ in {
       "result-*"
     ];
     settings = {
-      user.name = username;
-      user.email = email;
+      user.name = config.var.username;
+      user.email = config.var.email;
       init.defaultBranch = "main";
       pull.rebase = "false";
       push.autoSetupRemote = true;
@@ -44,10 +42,8 @@ in {
         st = "status";
         br = "branch";
         df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}";
-        hist = ''
-          log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
-        llog = ''
-          log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
+        hist = ''log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';
+        llog = ''log --graph --name-status --pretty=format:"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset" --date=relative'';
         edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; hx `f`";
       };
     };

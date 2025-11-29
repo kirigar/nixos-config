@@ -1,13 +1,5 @@
 { config, pkgs, ... }:
 {
-  programs.khal = {
-    enable = true;
-    locale = {
-      timeformat = "%H:%M";
-      dateformat = "%m-%d";
-    };
-  };
-
   programs.pimsync.enable = true;
   services.pimsync.enable = true;
 
@@ -30,14 +22,8 @@
           # TODO: Bitwarden
           passwordCommand = [
             "${pkgs.coreutils}/bin/cat"
-            "${config.xdg.configHome}/secrets/radicale_pass"
+            config.sops.secrets.radicale_pass.path
           ];
-        };
-
-        khal = {
-          enable = true;
-          type = "discover";
-          color = "light blue";
         };
 
         pimsync = {
@@ -75,7 +61,7 @@
                   name = "cmd";
                   params = [
                     "${pkgs.coreutils}/bin/cat"
-                    "${config.xdg.configHome}/secrets/university_calendar_url"
+                    config.sops.secrets.university_calendar_url.path
                   ];
                 }
               ];
@@ -87,10 +73,6 @@
               params = [ "events" ];
             }
           ];
-        };
-        khal = {
-          enable = true;
-          color = "#c72125";
         };
       };
     };

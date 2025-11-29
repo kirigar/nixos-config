@@ -115,11 +115,11 @@
         "rev": "ff7f23ab0351dcf8b062d6a5a99c2c6cafcf24a0",
         "revCount": 2,
         "type": "git",
-        "url": "file:///home/kiri/dev/lab/community-website"
+        "url": "ssh://git@orion/kiri/community-website"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/kiri/dev/lab/community-website"
+        "url": "ssh://git@orion/kiri/community-website"
       }
     },
     "copyparty": {
@@ -1472,11 +1472,11 @@
         "rev": "518bc7f87540926bf9c497c788cd944df122ea6e",
         "revCount": 5,
         "type": "git",
-        "url": "file:///home/kiri/dev/lab/zentire-new"
+        "url": "ssh://git@orion/kiri/zentire-website"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/kiri/dev/lab/zentire-new"
+        "url": "ssh://git@orion/kiri/zentire-website"
       }
     }
   },

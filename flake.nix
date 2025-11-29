@@ -45,12 +45,12 @@
 
     # Websites
     community-website = {
-      url = "git+file:///home/kiri/dev/lab/community-website";
+      url = "git+ssh://git@orion/kiri/community-website";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     zentire-website = {
-      url = "git+file:///home/kiri/dev/lab/zentire-new";
+      url = "git+ssh://git@orion/kiri/zentire-website";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

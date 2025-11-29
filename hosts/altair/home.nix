@@ -29,6 +29,7 @@
     ../../home/programs/thunderbird
     ../../home/programs/bitwarden
     ../../home/programs/nixCats
+    ../../home/programs/calendar
     #../../home/programs/zen-browser
 
     # Scripts

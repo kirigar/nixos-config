@@ -16,6 +16,7 @@
     ../../server-modules/copyparty.nix
     ../../server-modules/home-assistant.nix
     ../../server-modules/glance.nix
+    ../../server-modules/radicale.nix
 
     ./disk-config.nix
     ./hardware-configuration.nix

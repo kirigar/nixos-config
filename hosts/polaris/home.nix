@@ -35,6 +35,7 @@
     ../../home/programs/todoman
     ../../home/programs/aerc
     ../../home/programs/accounts
+    ../../home/programs/ssh
     #../../home/programs/zen-browser
 
     # Scripts

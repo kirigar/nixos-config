@@ -12,7 +12,6 @@
     ../../nixos/users.nix
     ../../nixos/utils.nix
     ../../nixos/hyprland.nix
-    ../../nixos/hosts.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix

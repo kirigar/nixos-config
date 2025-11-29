@@ -13,7 +13,6 @@
     ../../nixos/utils.nix
     #../../nixos/tailscale.nix
     ../../nixos/hyprland.nix
-    ../../nixos/hosts.nix
     #../../nixos/docker.nix
 
     # You should let those lines as is

@@ -13,7 +13,9 @@
     secrets = {
       radicale_pass = { };
       university_calendar_url = { };
-      # sshconfig = { path = "${config.home.homeDirectory}/.ssh/config"; };
+      ssh_config_orion = {
+        mode = "0600";
+      };
     };
   };
 
@@ -22,9 +24,9 @@
       - &primary age122w85pqj508ukv0rd388mahecgfckmpgnsgz0zcyec37ljae2epsdnvxpl
     creation_rules:
       - path_regex: hosts/polaris/secrets/secrets.yaml$
-      key_groups:
-        - age:
-          - *primary
+        key_groups:
+          - age:
+            - *primary
   '';
 
   home.packages = with pkgs; [

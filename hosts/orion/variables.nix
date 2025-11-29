@@ -28,6 +28,12 @@
       email = "mail@jelles.net";
     };
 
+    preferred = {
+      editor = "nvim";
+      terminal = "kitty";
+      browser = "brave";
+    };
+
     autoUpgrade = false;
     autoGarbageCollector = true;
   };

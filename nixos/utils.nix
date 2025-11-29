@@ -14,6 +14,9 @@ let
   numericLocale = config.var.numericLocale;
   timeLocale = config.var.timeLocale;
   autoUpgrade = config.var.autoUpgrade;
+  editor = config.var.preferred.editor;
+  terminal = config.var.preferred.terminal;
+  browser = config.var.preferred.browser;
 in
 {
   networking.hostName = hostname;
@@ -66,10 +69,10 @@ in
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "nvim";
-    TERMINAL = "kitty";
-    TERM = "kitty";
-    BROWSER = "brave";
+    EDITOR = editor;
+    TERMINAL = terminal;
+    TERM = terminal;
+    BROWSER = browser;
   };
 
   services.libinput.enable = true;

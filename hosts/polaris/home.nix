@@ -11,48 +11,39 @@
     ./secrets/default.nix
 
     # Programs
-    ../../home/programs/kitty
-    # ../../home/programs/alacritty
-    ../../home/programs/ghostty
-    #../../home/programs/nvf
-    ../../home/programs/shell
-    #../../home/programs/fetch
-    ../../home/programs/git
-    #../../home/programs/git/signing.nix
-    ../../home/programs/spicetify
-    ../../home/programs/thunar
-    ../../home/programs/lazygit
-    ../../home/programs/discord
-    #../../home/programs/tailscale
-    ../../home/programs/gpg
-    ../../home/programs/rclone
-    ../../home/programs/direnv
-    ../../home/programs/thunderbird
-    ../../home/programs/bitwarden
-    ../../home/programs/nixCats
-    ../../home/programs/khal
-    ../../home/programs/nh
-    ../../home/programs/todoman
-    ../../home/programs/aerc
-    ../../home/programs/accounts
-    ../../home/programs/ssh
-    #../../home/programs/zen-browser
+    ../../modules/home-manager/accounts
+    ../../modules/home-manager/nixCats
+    ../../modules/home-manager/shell
+
+    ../../modules/home-manager/aerc.nix
+    ../../modules/home-manager/bitwarden.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/discord.nix
+    ../../modules/home-manager/ghostty.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/gpg.nix
+    ../../modules/home-manager/khal.nix
+    ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/lazygit.nix
+    ../../modules/home-manager/nh.nix
+    ../../modules/home-manager/rclone.nix
+    ../../modules/home-manager/spicetify.nix
+    ../../modules/home-manager/ssh.nix
+    ../../modules/home-manager/thunar.nix
+    ../../modules/home-manager/thunderbird.nix
+    ../../modules/home-manager/todoman.nix
+    ../../modules/home-manager/vicinae.nix
+    ../../modules/home-manager/zathura.nix
 
     # Scripts
-    ../../home/scripts # All scripts
+    ../../modules/home-manager/scripts
 
     # System (Desktop environment like stuff)
-    ../../home/system/hyprland
-    #../../home/system/hyprlock
-    ../../home/system/hyprpanel
-    #../../home/system/ashell
-    ../../home/system/hyprpaper
-    ../../home/system/zathura
-    ../../home/system/mime
-    ../../home/system/udiskie
-    ../../home/system/vicinae
-    ../../home/system/wofi
-    # ../../home/system/hypridle
+    ../../modules/home-manager/hyprland
+    ../../modules/home-manager/hyprpanel.nix
+    ../../modules/home-manager/hyprpaper.nix
+    ../../modules/home-manager/mime.nix
+    ../../modules/home-manager/udiskie.nix
   ];
 
   home = {
@@ -107,9 +98,6 @@
 
       libreoffice-qt6-fresh
     ];
-
-    # Import my profile picture, used by the hyprpanel dashboard
-    #file.".face.icon" = {source = ./profile_picture.png;};
 
     # Don't touch this
     stateVersion = "24.05";

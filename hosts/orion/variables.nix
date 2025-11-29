@@ -6,7 +6,7 @@
 {
   imports = [
     # Choose your theme here:
-    ../../themes/catppuccin.nix
+    ../../modules/themes/catppuccin.nix
   ];
 
   config.var = {

@@ -9,14 +9,8 @@
     ./variables.nix
 
     # Programs
-    #../../home/programs/nvf
-    ../../home/programs/shell
-    #../../home/programs/fetch
-    ../../home/programs/git
-    #../../home/programs/lazygit
-
-    # Scripts
-    #../../home/scripts # All scripts
+    ../../modules/home-manager/shell
+    ../../modules/home-manager/git.nix
   ];
 
   home = {

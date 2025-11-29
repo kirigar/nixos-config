@@ -1,7 +1,11 @@
+{ config, ... }:
 {
+  accounts.email.maildirBasePath = "${config.xdg.dataHome}/mail";
   accounts.email.accounts = {
-    Main = {
+    main = {
       enable = true;
+      primary = true;
+
       address = "mail@jelles.net";
       imap = {
         authentication = "plain";
@@ -9,8 +13,6 @@
         port = 993;
         tls.enable = true;
       };
-      #passwordCommand = "rbw get \"Main E-Mail\""; #NOTE: Does not work for thunderbird
-      primary = true;
       realName = "Jelle Spreeuwenberg";
       smtp = {
         authentication = "plain";
@@ -24,7 +26,7 @@
       userName = "mail@jelles.net";
     };
 
-    Old = {
+    old = {
       enable = true;
       address = "mail@jellespreeuwenberg.nl";
       imap = {
@@ -46,7 +48,7 @@
       userName = "mail@jellespreeuwenberg.nl";
     };
 
-    Uni = {
+    uni = {
       # TODO: Thunderbird automatically uses normal password authentication instead of oauth, you have to manually change it
       enable = true;
       flavor = "outlook.office365.com";
@@ -54,11 +56,15 @@
       realName = "Jelle Spreeuwenberg";
       thunderbird = {
         enable = true;
+        settings = id: {
+          "mail.smtpserver.smtp_${id}.authMethod" = 10;
+          "mail.server.server_${id}.authMethod" = 10;
+        };
       };
       userName = "j.spreeuwenberg@student.tue.nl";
     };
 
-    Work = {
+    work = {
       # TODO: Thunderbird automatically uses normal password authentication instead of oauth, you have to manually change it
       enable = true;
       flavor = "outlook.office365.com";
@@ -66,22 +72,41 @@
       realName = "Jelle Spreeuwenberg";
       thunderbird = {
         enable = true;
+        settings = id: {
+          "mail.smtpserver.smtp_${id}.authMethod" = 10;
+          "mail.server.server_${id}.authMethod" = 10;
+        };
       };
       userName = "jelle.spreeuwenberg@yookr.org";
     };
   };
-  accounts.email.maildirBasePath = ".local/share/mail";
 
   programs.thunderbird = {
     enable = true;
-    profiles.default = {
-      accountsOrder = [
-        "Main"
-        "Old"
-        "Uni"
-        "Work"
-      ];
+    profiles.kiri = {
       isDefault = true;
+      withExternalGnupg = true;
+      settings = {
+        # LAYOUT: Force 3-Pane Vertical View (Folders | List | Message)
+        "mail.ui.display.message_pane_vertical" = true;
+
+        # APPEARANCE: Enable "Cards View" (modern multi-line list)
+        # Note: 'cards' is the value for the new view
+        "mail.ui.display.thread_pane_view_type" = "cards";
+
+        # DENSITY: "Compact" is usually cleaner for tech-savvy users
+        "mail.uidensity" = 1; # 0=Default, 1=Compact, 2=Touch
+
+        # PRIVACY & CLEANUP
+        "privacy.donottrackheader.enabled" = true;
+        "mail.server.server2.hidden" = true; # Hide "Local Folders"
+
+        # Start page disable for faster boot
+        "mailnews.start_page.enabled" = false;
+
+        # Disable the "Get a new email address" feature in account manager
+        "mail.provider.enabled" = false;
+      };
     };
   };
 }

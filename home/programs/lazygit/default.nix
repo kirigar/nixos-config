@@ -3,10 +3,12 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   accent = "#${config.lib.stylix.colors.base0D}";
   muted = "#${config.lib.stylix.colors.base03}";
-in {
+in
+{
   programs.lazygit = {
     enable = true;
     settings = lib.mkForce {
@@ -15,14 +17,15 @@ in {
       promptToReturnFromSubprocess = false;
       update.method = "never";
       git = {
-        commit.signOff = true;
-        overrideGpg = true; 
         parseEmoji = true;
       };
       gui = {
         theme = {
-          activeBorderColor = [accent "bold"];
-          inactiveBorderColor = [muted];
+          activeBorderColor = [
+            accent
+            "bold"
+          ];
+          inactiveBorderColor = [ muted ];
         };
         showListFooter = false;
         showRandomTip = false;

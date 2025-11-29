@@ -10,7 +10,10 @@ in
     settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = false;
-      AllowUsers = [ username ];
+      AllowUsers = [
+        username
+        "git"
+      ];
     };
   };
 

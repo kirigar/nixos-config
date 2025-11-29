@@ -29,7 +29,9 @@
     ../../home/programs/thunderbird
     ../../home/programs/bitwarden
     ../../home/programs/nixCats
-    ../../home/programs/calendar
+    ../../home/programs/khal
+    ../../home/programs/aerc
+    ../../home/programs/accounts
     #../../home/programs/zen-browser
 
     # Scripts

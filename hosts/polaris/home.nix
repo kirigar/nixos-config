@@ -8,6 +8,7 @@
   imports = [
     # Mostly user-specific configuration
     ./variables.nix
+    ./secrets/default.nix
 
     # Programs
     ../../home/programs/kitty
@@ -20,7 +21,7 @@
     #../../home/programs/git/signing.nix
     ../../home/programs/spicetify
     ../../home/programs/thunar
-    #../../home/programs/lazygit
+    ../../home/programs/lazygit
     ../../home/programs/discord
     #../../home/programs/tailscale
     ../../home/programs/gpg
@@ -29,7 +30,11 @@
     ../../home/programs/thunderbird
     ../../home/programs/bitwarden
     ../../home/programs/nixCats
-    ../../home/programs/calendar
+    ../../home/programs/khal
+    ../../home/programs/nh
+    ../../home/programs/todoman
+    ../../home/programs/aerc
+    ../../home/programs/accounts
     #../../home/programs/zen-browser
 
     # Scripts
@@ -79,7 +84,7 @@
       protonvpn-gui
       proton-pass
       proton-authenticator
-      ticktick # Privacy friendly todo app
+      # ticktick # Privacy friendly todo app
 
       # Utils
       zip

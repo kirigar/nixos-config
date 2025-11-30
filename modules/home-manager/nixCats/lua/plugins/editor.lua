@@ -167,4 +167,54 @@ require("lz.n").load({
       })
     end,
   },
+  {
+    "mini.nvim",
+    after = function()
+      -- Better Around/Inside textobjects
+      require("mini.ai").setup({ n_lines = 500 })
+
+      -- Add/delete/replace surroundings (brackets, quotes, etc.)
+      require("mini.surround").setup()
+
+      -- Simple and easy statusline.
+      local statusline = require("mini.statusline")
+      statusline.setup({ use_icons = true })
+      statusline.section_location = function()
+        return "%2l:%-2v"
+      end
+
+      local files = require("mini.files")
+      files.setup()
+      vim.keymap.set("n", "<leader>e", function()
+        if not files.close() then
+          files.open(vim.api.nvim_buf_get_name(0))
+        end
+      end, { desc = "File [E]xplorer" })
+
+      local icons = require("mini.icons")
+      icons.setup()
+      icons.mock_nvim_web_devicons()
+
+      local hipatterns = require("mini.hipatterns")
+      hipatterns.setup({
+        highlighters = {
+          -- Highlight hex color strings (#rrggbb) using that color
+          hex_color = hipatterns.gen_highlighter.hex_color(),
+        },
+      })
+
+      local indentscope = require("mini.indentscope")
+      indentscope.setup({
+        symbol = "│",
+        -- draw = { animation = indentscope.gen_animation.linear({}) },
+      })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+        callback = function()
+          vim.b.miniindentscope_disable = true
+        end,
+      })
+    end,
+  },
 })

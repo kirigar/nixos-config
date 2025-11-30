@@ -36,8 +36,8 @@
     # Mocha
     # See https://tinted-theming.github.io/tinted-gallery/ for more schemes
     base16Scheme = {
-      base00 = "0F0F15"; # Default Background
-      base01 = "15151A"; # Lighter Background (Used for status bars, line number and folding marks)
+      base00 = "1e1e2e"; # Default Background
+      base01 = "181825"; # Lighter Background (Used for status bars, line number and folding marks)
       base02 = "313244"; # Selection Background
       base03 = "45475a"; # Comments, Invisibles, Line Highlighting
       base04 = "585b70"; # Dark Foreground (Used for status bars)
@@ -65,11 +65,14 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrains Mono Nerd Font";
       };
+
       sansSerif = {
         package = pkgs.source-sans-pro;
         name = "Source Sans Pro";
       };
+
       serif = config.stylix.fonts.sansSerif;
+
       emoji = {
         package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";

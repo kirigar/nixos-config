@@ -7,6 +7,8 @@ in
   config.var = {
     hostname = "polaris";
 
+    has_battery = false;
+
     hyprsunset.temperature = 3500;
 
     hyprland = {

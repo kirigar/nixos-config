@@ -6,6 +6,8 @@ in
   config.var = {
     hostname = "altair";
 
+    has_battery = true;
+
     hyprsunset.temperature = 2000;
 
     hyprland = {

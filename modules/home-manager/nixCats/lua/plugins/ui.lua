@@ -1,49 +1,73 @@
 require("lz.n").load({
+  -- {
+  --   "catppuccin-nvim",
+  --   event = "VimEnter",
+  --   after = function()
+  --     require("catppuccin").setup({
+  --       flavour = "mocha",
+  --       term_colors = true,
+  --       dim_inactive = {
+  --         enabled = true,
+  --         shade = "dark",
+  --         percentage = 0.15,
+  --       },
+  --       integrations = {
+  --         gitsigns = true,
+  --         telescope = true,
+  --         treesitter = true,
+  --         treesitter_context = true,
+  --         markdown = true,
+  --         which_key = true,
+  --         blink_cmp = {
+  --           style = "bordered",
+  --         },
+  --       },
+  --
+  --       native_lsp = {
+  --         enabled = true,
+  --         virtual_text = {
+  --           errors = { "italic" },
+  --           hints = { "italic" },
+  --           warnings = { "italic" },
+  --           information = { "italic" },
+  --         },
+  --         underlines = {
+  --           errors = { "underline" },
+  --           hints = { "underline" },
+  --           warnings = { "underline" },
+  --           information = { "underline" },
+  --         },
+  --         inlay_hints = {
+  --           background = true,
+  --         },
+  --       },
+  --     })
+  --
+  --     vim.cmd.colorscheme("catppuccin")
+  --   end,
+  -- },
   {
-    "catppuccin-nvim",
+    "theme-loader",
     event = "VimEnter",
-    after = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        term_colors = true,
-        dim_inactive = {
-          enabled = true,
-          shade = "dark",
-          percentage = 0.15,
-        },
-        integrations = {
-          gitsigns = true,
-          telescope = true,
-          treesitter = true,
-          treesitter_context = true,
-          markdown = true,
-          which_key = true,
-          blink_cmp = {
-            style = "bordered",
-          },
-        },
+    load = function()
+      local theme_code = nixCats.extra("themeSetup")
 
-        native_lsp = {
-          enabled = true,
-          virtual_text = {
-            errors = { "italic" },
-            hints = { "italic" },
-            warnings = { "italic" },
-            information = { "italic" },
-          },
-          underlines = {
-            errors = { "underline" },
-            hints = { "underline" },
-            warnings = { "underline" },
-            information = { "underline" },
-          },
-          inlay_hints = {
-            background = true,
-          },
-        },
-      })
-
-      vim.cmd.colorscheme("catppuccin")
+      if theme_code and theme_code ~= "" then
+        local func, err = loadstring(theme_code)
+        if func then
+          func()
+        else
+          print("Error loading theme code: " .. err)
+        end
+      else
+        local colors = nixCats.extra("stylixColors")
+        if colors then
+          require("lz.n").trigger_load("mini.nvim")
+          require("mini.base16").setup({
+            palette = colors,
+          })
+        end
+      end
     end,
   },
   {

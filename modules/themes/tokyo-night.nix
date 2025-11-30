@@ -26,6 +26,16 @@
         transparentButtons = false;
         floating = true;
       };
+
+      neovim = {
+        plugin = pkgs.vimPlugins.tokyonight-nvim;
+        setup = ''
+          require("tokyonight").setup({
+            style = "night"
+          })
+          vim.cmd.colorscheme("tokyonight")
+        '';
+      };
     };
     description = "Theme configuration options";
   };
@@ -86,19 +96,19 @@
     };
 
     polarity = "dark";
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
-    #   sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
-    # };
+    image = pkgs.fetchurl {
+      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
+      sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
+    };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/alone-cloud_dark.png";
     #   sha256 = "sha256-L4Esjo6LEwhBEN29WX445F+54rlnvOtAMKsQz8Qpyuc=";
     # };
 
-    image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/the-cloud-is-hidding-the-moon_dark.png";
-      sha256 = "sha256-EEH2cHsVromD+X5VFF3YObNuSSRbDnpfqEN6fjCztbc=";
-    };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/the-cloud-is-hidding-the-moon_dark.png";
+    #   sha256 = "sha256-EEH2cHsVromD+X5VFF3YObNuSSRbDnpfqEN6fjCztbc=";
+    # };
   };
 }

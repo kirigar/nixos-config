@@ -1,7 +1,19 @@
-{ inputs, config, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 let
   inherit (inputs.nixCats) utils;
   luaPath = ./.;
+
+  themeConfig =
+    config.theme.neovim or {
+      plugin = null;
+      setup = "";
+    };
+
   categoryDefinitions =
     { pkgs, ... }:
     {
@@ -47,11 +59,13 @@ let
       };
 
       startupPlugins = {
-        general = with pkgs.vimPlugins; [
-          lz-n
-          plenary-nvim
-          catppuccin-nvim
-        ];
+        general =
+          with pkgs.vimPlugins;
+          [
+            lz-n
+            plenary-nvim
+          ]
+          ++ (lib.optional (themeConfig.plugin != null) themeConfig.plugin);
       };
 
       optionalPlugins = {
@@ -86,7 +100,9 @@ let
           render-markdown-nvim
 
           colorful-menu-nvim
+
         ];
+
       };
 
       sharedLibraries = {
@@ -132,6 +148,13 @@ let
             nixos_options = ''(builtins.getFlake "path://${config.var.configDirectory}").nixosConfigurations.${toString config.var.hostname}.options'';
             home_manager_options = ''(builtins.getFlake "path://${config.var.configDirectory}").nixosConfigurations.${toString config.var.hostname}.options.home-manager.users.type.getSubOptions []'';
           };
+
+          themeSetup = themeConfig.setup;
+
+          # Pass only base00-base0F to neovim
+          stylixColors = lib.filterAttrs (
+            k: v: builtins.match "base0[0-9A-F]" k != null
+          ) config.lib.stylix.colors.withHashtag;
         };
       };
 

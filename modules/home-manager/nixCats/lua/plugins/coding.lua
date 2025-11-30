@@ -205,12 +205,8 @@ require("lz.n").load({
           documentation = {
             auto_show = true,
             auto_show_delay_ms = 500,
-            window = {
-              border = "rounded",
-            },
           },
           menu = {
-            border = "rounded",
             draw = {
               columns = { { "kind_icon" }, { "label", gap = 1 } },
               components = {
@@ -254,7 +250,6 @@ require("lz.n").load({
 
         -- Shows a signature help window while you type arguments for a function
         signature = {
-          window = { border = "rounded" },
           enabled = true,
         },
       })

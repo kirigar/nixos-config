@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
   imports = [
-    ./themes/tokyo-city.nix
+    ./themes/kanagawa-wave.nix
   ];
 
   config.var = {

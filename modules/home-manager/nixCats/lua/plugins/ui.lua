@@ -109,9 +109,6 @@ require("lz.n").load({
       require("which-key").setup({
         preset = "modern",
         delay = 200,
-        win = {
-          border = "rounded",
-        },
         icons = {
           -- set icon mappings to true if you have a Nerd Font
           mappings = true,

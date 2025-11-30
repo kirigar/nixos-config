@@ -1,7 +1,7 @@
 { config, lib, ... }:
 {
   imports = [
-    ./themes/catppuccin.nix
+    ./themes/tokyo-city.nix
   ];
 
   config.var = {

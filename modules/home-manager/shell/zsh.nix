@@ -21,6 +21,9 @@ in
 
   programs.zsh = {
     enable = true;
+
+    dotDir = "${config.xdg.configHome}/zsh";
+
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting = {
@@ -40,6 +43,7 @@ in
       ignoreDups = true;
       save = 10000;
       size = 10000;
+      path = "${config.xdg.dataHome}/zsh_history";
     };
 
     profileExtra = lib.optionalString (config.home.sessionPath != [ ]) ''

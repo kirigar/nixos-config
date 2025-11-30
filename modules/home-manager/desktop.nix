@@ -88,9 +88,6 @@
       pipes
       cmatrix
 
-      # Backup
-      vscode
-
       libreoffice-qt6-fresh
     ];
   };

@@ -176,13 +176,6 @@ require("lz.n").load({
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       require("mini.surround").setup()
 
-      -- Simple and easy statusline.
-      local statusline = require("mini.statusline")
-      statusline.setup({ use_icons = true })
-      statusline.section_location = function()
-        return "%2l:%-2v"
-      end
-
       local files = require("mini.files")
       files.setup()
       vim.keymap.set("n", "<leader>e", function()

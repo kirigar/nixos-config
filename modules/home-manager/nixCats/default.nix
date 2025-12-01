@@ -101,6 +101,8 @@ let
 
           colorful-menu-nvim
 
+          lualine-nvim
+          bufferline-nvim
         ];
 
       };

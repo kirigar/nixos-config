@@ -126,4 +126,73 @@ require("lz.n").load({
       })
     end,
   },
+  {
+    "lualine.nvim",
+    event = "VimEnter",
+    after = function()
+      require("lualine").setup({
+        options = {
+          icons_enabled = true,
+          globalstatus = true,
+          component_separators = "",
+          section_separators = "",
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch", "diagnostics" },
+          lualine_c = { "filename" },
+
+          lualine_x = { "lsp_status" },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+      })
+    end,
+  },
+  {
+    "bufferline.nvim",
+    enabled = false,
+    event = "VimEnter",
+    after = function()
+      require("bufferline").setup({
+        options = {
+          mode = "buffers",
+          numbers = "none",
+
+          separator_style = "thick",
+
+          -- Integrations
+          diagnostics = "nvim_lsp",
+          diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+            return " " .. icon .. count
+          end,
+
+          -- Visuals
+          show_buffer_close_icons = false,
+          show_close_icon = false,
+          color_icons = true,
+          show_tab_indicators = true,
+        },
+
+        highlights = {
+          fill = {
+            bg = "NONE", -- Makes the empty space transparent/blended
+          },
+          background = {
+            bg = "NONE", -- Makes inactive buffers transparent/blended
+          },
+          -- Optional: Fix separators if they look "cut off"
+          separator = {
+            fg = { attribute = "bg", highlight = "Normal" },
+            bg = "NONE",
+          },
+          separator_visible = {
+            fg = { attribute = "bg", highlight = "Normal" },
+            bg = "NONE",
+          },
+        },
+      })
+    end,
+  },
 })

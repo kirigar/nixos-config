@@ -1,10 +1,19 @@
 { config, pkgs, ... }:
+let
+  calendarsPath = "${config.xdg.dataHome}/calendars";
+in
 {
   programs.pimsync.enable = true;
   services.pimsync.enable = true;
 
+  systemd.user.tmpfiles.rules = [
+    "d ${calendarsPath} 0700 - - - -"
+    "d ${calendarsPath}/radicale 0700 - - - -"
+    "d ${calendarsPath}/university 0700 - - - -"
+  ];
+
   accounts.calendar = {
-    basePath = "${config.xdg.dataHome}/calendars";
+    basePath = calendarsPath;
     accounts = {
       "radicale" = {
         primary = true;

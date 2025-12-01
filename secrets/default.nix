@@ -13,6 +13,7 @@
     secrets = {
       radicale_pass = { };
       university_calendar_url = { };
+      orion_ip = { };
       ssh_config_orion = {
         mode = "0600";
       };

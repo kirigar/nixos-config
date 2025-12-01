@@ -8,11 +8,6 @@ let
   storageRoot = "/var/lib/filebrowser/files";
   publishDirName = "_publish";
 
-  fontPackages = with pkgs; [
-    libertinus
-    gyre-fonts
-  ];
-
   processorScript = pkgs.writeShellScriptBin "process-docs" ''
     SRC_ROOT="${storageRoot}"
     OUT_ROOT="${storageRoot}/${publishDirName}"
@@ -73,6 +68,11 @@ let
 
 in
 {
+
+  imports = [
+    ./fonts.nix
+  ];
+
   services.filebrowser = {
     enable = true;
 
@@ -87,12 +87,12 @@ in
     reverse_proxy :${toString config.services.filebrowser.settings.port}
   '';
 
+  # Auto compile pdfs
   systemd.services.pdf-watcher = {
     description = "Auto-compile MD and Typst to PDF";
     after = [ "filebrowser.service" ];
     wantedBy = [ "multi-user.target" ];
 
-    # Important: Run as the same user as Filebrowser to avoid permission issues
     serviceConfig = {
       User = "filebrowser";
       Group = "filebrowser";
@@ -102,7 +102,7 @@ in
       Environment = [
         "HOME=/var/lib/filebrowser"
         "XDG_CACHE_HOME=/var/lib/filebrowser/.cache"
-        "TYPST_FONT_PATHS=${lib.makeSearchPath "share/fonts" fontPackages}"
+        # 3"TYPST_FONT_PATHS=${lib.makeSearchPath "share/fonts" fontPackages}"
       ];
 
       Restart = "always";
@@ -113,4 +113,16 @@ in
       pandoc
     ];
   };
+
+  # Allow my user to access the filebrowser directory
+  users.users."${config.var.username}".extraGroups = [ "filebrowser" ];
+
+  systemd.services.filebrowser.serviceConfig = {
+    UMask = lib.mkForce "0007";
+  };
+
+  systemd.tmpfiles.rules = [
+    "Z /var/lib/filebrowser 0750 filebrowser filebrowser -" # Explicitly secure the data dir root
+    "Z /var/lib/filebrowser/files 2770 filebrowser filebrowser -" # Sticky group on files
+  ];
 }

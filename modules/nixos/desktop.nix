@@ -7,6 +7,7 @@
     ./fonts.nix
     ./sddm.nix
     ./hyprland.nix
+    ./printing.nix
     ./systemd-boot.nix
   ];
 }

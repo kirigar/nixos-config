@@ -133,23 +133,6 @@
     };
 
     polarity = "dark";
-    image = pkgs.fetchurl {
-      url = "https://files.jelles.net/public/green-leaves.png";
-      sha256 = "sha256-XVj5dDJL383QqUjmdqjpr35odXIU0sQO5WM9yAuRgN0=";
-    };
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
-    #   sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/alone-cloud_dark.png";
-    #   sha256 = "sha256-L4Esjo6LEwhBEN29WX445F+54rlnvOtAMKsQz8Qpyuc=";
-    # };
-
-    # image = pkgs.fetchurl {
-    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/the-cloud-is-hidding-the-moon_dark.png";
-    #   sha256 = "sha256-EEH2cHsVromD+X5VFF3YObNuSSRbDnpfqEN6fjCztbc=";
-    # };
+    image = ./wallpapers/green_leaves_minimalist.png;
   };
 }

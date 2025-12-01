@@ -81,6 +81,7 @@
       pfetch
       btop
       fastfetch
+      gimp
 
       # Just cool
       peaclock

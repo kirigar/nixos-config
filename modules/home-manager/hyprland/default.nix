@@ -145,23 +145,12 @@ in
       windowrule = [
         "match:title hyprpanel-settings, float on"
         "match:class xdg-desktop-portal-gtk, float on, center on, size monitor_w/2 monitor_h/2"
-        # Bitwarden extension
-
-        # idle inhibit while watching videos
-        #"idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
-        #"idleinhibit focus, class:^(zen)$, title:^(.*YouTube.*)$"
-        #"idleinhibit fullscreen, class:^(zen)$"
-
-        #"dimaround, class:^(gcr-prompter)$"
-        #"dimaround, class:^(xdg-desktop-portal-gtk)$"
-        #"dimaround, class:^(polkit-gnome-authentication-agent-1)$"
-        #"dimaround, class:^(zen)$, title:^(File Upload)$"
+        # Match on bitwarden chrome extension id
+        "match:class .*nngceckbapebfimnlniiiahkandclblb.*, float on, center on, size monitor_w/2 monitor_h/2"
       ];
 
       layerrule = [
         "match:namespace vicinae, no_anim on, blur on, ignore_alpha 0"
-        #"no_anim, launcher"
-        #"no_anim, ^ags-.*"
       ];
 
       input = {

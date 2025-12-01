@@ -134,9 +134,13 @@
 
     polarity = "dark";
     image = pkgs.fetchurl {
-      url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
-      sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
+      url = "https://files.jelles.net/public/green-leaves.png";
+      sha256 = "sha256-XVj5dDJL383QqUjmdqjpr35odXIU0sQO5WM9yAuRgN0=";
     };
+    # image = pkgs.fetchurl {
+    #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/leef_dark_purple_minimalist.png";
+    #   sha256 = "sha256-q6ufFdC/tMSb+mllw7XhilkAObemXXyps2SBlnMt7mY=";
+    # };
 
     # image = pkgs.fetchurl {
     #   url = "https://raw.githubusercontent.com/anotherhadi/awesome-wallpapers/refs/heads/main/app/static/wallpapers/alone-cloud_dark.png";

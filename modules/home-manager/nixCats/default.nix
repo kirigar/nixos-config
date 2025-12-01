@@ -55,6 +55,11 @@ let
           isort
 
           astro-language-server
+
+          tinymist
+          typstyle
+
+          ltex-ls-plus
         ];
       };
 
@@ -103,6 +108,8 @@ let
 
           lualine-nvim
           bufferline-nvim
+
+          zen-mode-nvim
         ];
 
       };

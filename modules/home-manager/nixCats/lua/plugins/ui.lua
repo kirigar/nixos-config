@@ -195,4 +195,16 @@ require("lz.n").load({
       })
     end,
   },
+  {
+    "zen-mode.nvim",
+    after = function()
+      require("zen-mode").setup({
+        window = {
+          options = {
+            linebreak = true,
+          },
+        },
+      })
+    end,
+  },
 })

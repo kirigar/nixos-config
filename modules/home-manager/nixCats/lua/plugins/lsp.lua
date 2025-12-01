@@ -161,6 +161,24 @@ require("lz.n").load({
         vim.lsp.enable("basedpyright")
 
         vim.lsp.enable("astro")
+
+        vim.lsp.config("tinymist", {
+          settings = {
+            tinymist = {
+              formatterMode = "typstyle",
+            },
+          },
+        })
+        vim.lsp.enable("tinymist")
+
+        vim.lsp.config("ltex_plus", {
+          settings = {
+            ltex = {
+              language = "nl",
+            },
+          },
+        })
+        vim.lsp.enable("ltex_plus")
       end,
     },
   },

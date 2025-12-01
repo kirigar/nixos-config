@@ -20,6 +20,12 @@
       nerd-fonts.meslo-lg
       openmoji-color
       twemoji-color-font
+
+      fira-sans
+      merriweather
+
+      lexend
+      literata
     ];
 
     enableDefaultPackages = false;

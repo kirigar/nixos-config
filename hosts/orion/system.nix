@@ -12,7 +12,6 @@
     ../../modules/nixos/firewall.nix
     ../../modules/nixos/filebrowser.nix
     ../../modules/nixos/home-assistant.nix
-    ../../modules/nixos/glance.nix
     ../../modules/nixos/radicale.nix
     ../../modules/nixos/actual-budget.nix
     ../../modules/nixos/gitea.nix

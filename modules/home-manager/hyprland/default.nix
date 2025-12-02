@@ -144,9 +144,10 @@ in
 
       windowrule = [
         "match:title hyprpanel-settings, float on"
-        "match:class xdg-desktop-portal-gtk, float on, center on, size monitor_w/2 monitor_h/2"
+        "match:class xdg-desktop-portal-gtk, float on, center on, size (monitor_w * 0.5) (monitor_h * 0.5)"
         # Match on bitwarden chrome extension id
-        "match:class .*nngceckbapebfimnlniiiahkandclblb.*, float on, center on, size monitor_w/2 monitor_h/2"
+        "match:class .*nngceckbapebfimnlniiiahkandclblb.*, float on, center on, size (monitor_w * 0.5) (monitor_h * 0.5)"
+        "match:class imv, float on, center on, max_size (monitor_w * 0.8) (monitor_h * 0.8)"
       ];
 
       layerrule = [

@@ -25,7 +25,6 @@
     ./nh.nix
     ./spicetify.nix
     ./ssh.nix
-    ./syncthing.nix
     ./thunar.nix
     ./thunderbird.nix
     ./todoman.nix

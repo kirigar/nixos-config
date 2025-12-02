@@ -25,17 +25,6 @@
       browser = "brave";
     };
 
-    syncthing = {
-      devices = {
-        "altair" = {
-          id = "HDHWROJ-ZLNQKCL-PN6WGHA-IGJHIRI-3UHDYUU-LUJHYK4-UMKWLAZ-VFISJQF";
-        };
-        "orion" = {
-          id = "7ESQ3BX-FEW7656-ZPT3CKF-FLXON26-HXRNTDW-THSJBNF-LFWCHFB-ASP4WAG";
-        };
-      };
-    };
-
     autoUpgrade = false;
     autoGarbageCollector = true;
   };

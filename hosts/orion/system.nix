@@ -10,6 +10,7 @@
     ../../modules/nixos/caddy.nix
     ../../modules/nixos/bitwarden.nix
     ../../modules/nixos/firewall.nix
+    ../../modules/nixos/syncthing.nix
     ../../modules/nixos/filebrowser.nix
     ../../modules/nixos/home-assistant.nix
     ../../modules/nixos/radicale.nix

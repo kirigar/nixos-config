@@ -23,9 +23,9 @@
     ./kitty.nix
     ./lazygit.nix
     ./nh.nix
-    ./rclone.nix
     ./spicetify.nix
     ./ssh.nix
+    ./syncthing.nix
     ./thunar.nix
     ./thunderbird.nix
     ./todoman.nix

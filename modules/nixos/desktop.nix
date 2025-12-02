@@ -9,5 +9,6 @@
     ./hyprland.nix
     ./printing.nix
     ./systemd-boot.nix
+    ./syncthing.nix
   ];
 }

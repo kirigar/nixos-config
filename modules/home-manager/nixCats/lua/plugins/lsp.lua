@@ -78,7 +78,7 @@ require("lz.n").load({
         -- 1. Setup Diagnostics (Visuals)
         vim.diagnostic.config({
           severity_sort = true,
-          underline = { severity = vim.diagnostic.severity.ERROR },
+          -- underline = { severity = vim.diagnostic.severity.ERROR },
           signs = {
             text = {
               [vim.diagnostic.severity.ERROR] = " ",
@@ -171,14 +171,16 @@ require("lz.n").load({
         })
         vim.lsp.enable("tinymist")
 
-        vim.lsp.config("ltex_plus", {
-          settings = {
-            ltex = {
-              language = "nl",
-            },
-          },
-        })
-        vim.lsp.enable("ltex_plus")
+        -- vim.lsp.config("ltex_plus", {
+        --   settings = {
+        --     ltex = {
+        --       language = "nl",
+        --     },
+        --   },
+        -- })
+        -- vim.lsp.enable("ltex_plus")
+
+        vim.lsp.enable("harper_ls")
       end,
     },
   },

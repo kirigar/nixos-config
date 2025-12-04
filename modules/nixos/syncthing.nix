@@ -4,6 +4,18 @@
   ...
 }:
 let
+  devices = {
+    "altair" = {
+      id = "HDHWROJ-ZLNQKCL-PN6WGHA-IGJHIRI-3UHDYUU-LUJHYK4-UMKWLAZ-VFISJQF";
+    };
+    "orion" = {
+      id = "7ESQ3BX-FEW7656-ZPT3CKF-FLXON26-HXRNTDW-THSJBNF-LFWCHFB-ASP4WAG";
+    };
+    "polaris" = {
+      id = "6YBO3OK-3QVMKWL-ZOS4ZTF-G53CY6K-WYZJNFG-DTYCUA4-WJF2LRC-PJT3NAL";
+    };
+  };
+
   username = config.var.username;
   hostname = config.var.hostname;
   isOrion = hostname == "orion";
@@ -33,12 +45,12 @@ in
     overrideFolders = true; # Overrides any folders added via Web UI
 
     settings = {
-      devices = config.var.syncthing.devices;
+      devices = devices;
 
       folders = {
         "sync" = {
           path = syncPath;
-          devices = builtins.attrNames config.var.syncthing.devices; # Share with all defined devices
+          devices = builtins.attrNames devices; # Share with all defined devices
           # Ensure new files are readable by the group (chmod 770 approx)
           ignorePerms = true;
         };

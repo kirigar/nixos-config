@@ -61,6 +61,8 @@ let
           typstyle
 
           ltex-ls-plus
+
+          harper
         ];
       };
 

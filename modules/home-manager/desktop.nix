@@ -89,6 +89,8 @@
       cmatrix
 
       libreoffice-qt6-fresh
+
+      trash-cli
     ];
   };
 }

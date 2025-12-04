@@ -40,7 +40,7 @@ in
           path = syncPath;
           devices = builtins.attrNames config.var.syncthing.devices; # Share with all defined devices
           # Ensure new files are readable by the group (chmod 770 approx)
-          ignorePerms = false;
+          ignorePerms = true;
         };
       };
 

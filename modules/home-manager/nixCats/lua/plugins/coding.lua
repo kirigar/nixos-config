@@ -172,12 +172,24 @@ require("lz.n").load({
     end,
   },
   {
+    -- lazydev makes your lsp way better in your config without needing extra lsp configuration.
+    "lazydev.nvim",
+    cmd = "LazyDev",
+    ft = "lua",
+    after = function()
+      require("lazydev").setup({
+        library = {
+          { words = { "nixCats" }, path = (nixCats.nixCatsPath or "") .. "/lua" },
+        },
+      })
+    end,
+  },
+  {
     "blink.cmp",
     before = function()
       -- Trigger lazydev so it's ready for blink source
       require("lz.n").trigger_load({ "lazydev.nvim", "luasnip" })
     end,
-    event = "VimEnter",
     after = function()
       require("blink.cmp").setup({
         keymap = {

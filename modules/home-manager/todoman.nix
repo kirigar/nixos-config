@@ -7,7 +7,7 @@
       time_format = "%H:%M"
       default_list = "personal"
       default_due = 0
-      default_command = "list --sort due"
+      default_command = "list --sort priority,due"
       humanize = True
     '';
   };

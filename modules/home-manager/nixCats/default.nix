@@ -45,6 +45,7 @@ let
           typescript
           typescript-language-server
 
+          rustc
           rust-analyzer
           rustfmt
 

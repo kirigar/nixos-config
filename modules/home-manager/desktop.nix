@@ -81,16 +81,20 @@
       btop
       fastfetch
       gimp
+      calibre
 
       # Just cool
       peaclock
       cbonsai
       pipes
       cmatrix
+      qbittorrent
 
       libreoffice-qt6-fresh
 
       trash-cli
+
+      vscode
     ];
   };
 }

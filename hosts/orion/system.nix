@@ -7,6 +7,7 @@
     ../../modules/nixos/common.nix
 
     ../../modules/nixos/ssh.nix
+    ../../modules/nixos/calibre-web.nix
     ../../modules/nixos/caddy.nix
     ../../modules/nixos/bitwarden.nix
     ../../modules/nixos/firewall.nix
